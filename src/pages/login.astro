@@ -1,0 +1,23 @@
+---
+import kindeClient from "../serverKinde";
+import sessionManager from "../sessionManage";
+
+await kindeClient.login(sessionManager);
+
+
+---
+
+<button onclick="handleLogin()" type="button">Sign in</button>
+
+<script>
+	import kindeClient from '../clientKinde';
+
+	async function handleLogin() {
+    const url = await kindeClient.login();
+    // Redirect
+    window.location.href = url.toString();
+}
+handleLogin();
+	console.log("logging")
+</script>
+
